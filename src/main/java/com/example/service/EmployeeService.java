@@ -8,11 +8,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.dto.EmployeeDetailDto;
+import com.example.dto.employee.EmployeeDetailDto;
 import com.example.mapper.EmployeeMapper;
 import com.example.mapper.EmployeeRoleMapper;
-import com.example.vo.Employee;
-import com.example.vo.EmployeeRole;
+import com.example.vo.employee.Employee;
+import com.example.vo.employee.EmployeeRole;
 
 @Service
 @Transactional
@@ -25,7 +25,7 @@ public class EmployeeService {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	
-	public EmployeeDetailDto getEmplDetail(int no) {
+	public com.example.dto.employee.EmployeeDetailDto getEmplDetail(int no) {
 		Employee employee = employeeMapper.getEmployeeByNo(no);
 		List<EmployeeRole> employeeRoles = employeeRoleMapper.getEmpRolesByEmployeeNo(no);
 		
